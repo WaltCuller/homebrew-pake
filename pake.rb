@@ -9,6 +9,7 @@ class Pake < Formula
   license "MIT"
 
   # depends_on "cmake" => :build
+  depends_on "rust"
   depends_on "node"
   depends_on "npm"
 
