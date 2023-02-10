@@ -9,6 +9,8 @@ class Pake < Formula
   license "MIT"
 
   # depends_on "cmake" => :build
+  depends_on "node"
+  depends_on "npm"
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
@@ -16,6 +18,7 @@ class Pake < Formula
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
     # system "./configure", *std_configure_args, "--disable-silent-rules"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    cargo tauri build
     bin.install 'pake'
   end
 
